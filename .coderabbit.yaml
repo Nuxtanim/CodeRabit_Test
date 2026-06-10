@@ -1,0 +1,118 @@
+language: "en-US"
+
+reviews:
+  profile: "assertive"
+
+  high_level_summary: true
+  review_status: true
+  collapse_walkthrough: false
+  poem: false
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+  request_changes_workflow: true
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  opt_out: false
+
+path_filters:
+  - "!node_modules/**"
+  - "!dist/**"
+  - "!build/**"
+  - "!coverage/**"
+  - "!*.lock"
+
+path_instructions:
+
+  - path: "src/pages/**"
+    instructions: |
+      Review React page components for:
+
+      - Missing loading states
+      - Missing error handling
+      - Accessibility issues
+      - React hook dependency problems
+      - Performance bottlenecks
+      - Missing TypeScript types
+      - State management issues
+      - Security vulnerabilities
+
+  - path: "src/components/**"
+    instructions: |
+      Review React components for:
+
+      - Unnecessary re-renders
+      - Missing memoization
+      - Invalid React patterns
+      - Accessibility compliance
+      - Missing keys in lists
+      - Improper event handling
+      - Component reusability
+
+  - path: "src/context/**"
+    instructions: |
+      Review Context API usage for:
+
+      - Improper typing
+      - State mutation
+      - Stale state updates
+      - Missing error handling
+      - Performance concerns
+
+  - path: "src/data/**"
+    instructions: |
+      Review mock data structure for:
+
+      - Data consistency
+      - Type safety concerns
+      - Missing fields
+      - Invalid relationships
+
+  - path: "**/*.tsx"
+    instructions: |
+      Check for:
+
+      - Usage of any
+      - Missing interfaces
+      - Missing useMemo
+      - Missing useCallback
+      - Missing dependency arrays
+      - React anti-patterns
+      - Accessibility issues
+      - XSS vulnerabilities
+      - Improper key usage
+      - Form validation issues
+      - Missing error boundaries
+
+  - path: "**"
+    instructions: |
+      Prioritize reporting:
+
+      1. Security vulnerabilities
+      2. Data loss risks
+      3. Performance issues
+      4. Accessibility issues
+      5. TypeScript issues
+      6. React best practices
+      7. Maintainability concerns
+
+      Do not focus on formatting issues already handled by ESLint or Prettier.
+
+      Provide concrete code examples when suggesting improvements.
+
+      Flag:
+      - dangerouslySetInnerHTML
+      - any types
+      - array index keys
+      - expensive computations during render
+      - state mutation
+      - missing cleanup functions
+      - missing validation
+      - missing error handling
+      - localStorage misuse
+      - missing accessibility labels
