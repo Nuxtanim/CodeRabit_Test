@@ -581,6 +581,80 @@ textarea {
   font-weight: 600;
 }
 
+.stat-card.danger .value {
+  color: var(--danger);
+}
+
+.badge.critical {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-tab {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.82rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: #c7d2fe;
+}
+
+.table-panel {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: var(--surface-2);
+}
+
+.data-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.table-muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+}
+
 @media (max-width: 1100px) {
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
