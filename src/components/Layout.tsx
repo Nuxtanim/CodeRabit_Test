@@ -4,6 +4,7 @@ const navItems = [
   { to: '/', label: 'Dashboard', icon: '▦' },
   { to: '/products', label: 'Products', icon: '◫' },
   { to: '/products/new', label: 'Add Product', icon: '＋' },
+  { to: '/stock-alerts', label: 'Stock Alerts', icon: '⚠' },
   { to: '/reports', label: 'Reports', icon: '◷' },
 ];
 

@@ -15,8 +15,14 @@ export function ProductProvider({ children }: { children: ReactNode }) {
     setProducts((current) => current.filter((product) => product.id !== id));
   };
 
+  const updateStock = (id: number, stock: number) => {
+    setProducts((current) =>
+      current.map((product) => (product.id === id ? { ...product, stock } : product))
+    );
+  };
+
   return (
-    <ProductContext.Provider value={{ products, addProduct, deleteProduct }}>
+    <ProductContext.Provider value={{ products, addProduct, deleteProduct, updateStock }}>
       {children}
     </ProductContext.Provider>
   );
