@@ -1,11 +1,23 @@
-
-import {createContext,useState} from 'react';
+import { createContext, useState, type ReactNode } from 'react';
 import data from '../data/products.json';
-export const ProductContext = createContext<any>(null);
+import type { Product, ProductContextValue } from '../types/product';
 
-export const ProductProvider = ({children}:any)=>{
- const [products,setProducts]=useState(data);
- const addProduct=(product:any)=>setProducts([...products,product]);
- const deleteProduct=(id:number)=>setProducts(products.filter((p:any)=>p.id!==id));
- return <ProductContext.Provider value={{products,addProduct,deleteProduct}}>{children}</ProductContext.Provider>
+export const ProductContext = createContext<ProductContextValue | null>(null);
+
+export function ProductProvider({ children }: { children: ReactNode }) {
+  const [products, setProducts] = useState<Product[]>(data);
+
+  const addProduct = (product: Product) => {
+    setProducts((current) => [...current, product]);
+  };
+
+  const deleteProduct = (id: number) => {
+    setProducts((current) => current.filter((product) => product.id !== id));
+  };
+
+  return (
+    <ProductContext.Provider value={{ products, addProduct, deleteProduct }}>
+      {children}
+    </ProductContext.Provider>
+  );
 }
